@@ -1,0 +1,26 @@
+generated: '2026-09-12'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts (no API baseURL or OpenAPI servers[] host exists)
+note: >-
+  The automated probe (0-working/probe-domain-security.py) first recorded https: false for
+  www.afalight.com; that was a false negative caused by repeated connection timeouts against
+  this origin, which is slow and intermittent from a US vantage point. A direct HEAD confirmed
+  HTTP/2 200 over TLS with a Strict-Transport-Security header, so the corrected values below
+  are the observed ones.
+hosts:
+- host: www.afalight.com
+  https: true
+  http_version: h2
+  server: nginx
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: false
+  hsts_preload: false
+  observed: '2026-09-12'
+domains:
+- domain: afalight.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

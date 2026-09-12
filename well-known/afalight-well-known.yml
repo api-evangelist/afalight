@@ -1,0 +1,122 @@
+generated: '2026-09-12'
+method: probed
+source: >-
+  Direct HTTP probe of the closed, named /.well-known/ path list plus /apis.json and
+  /apis.yml against every host this record knows for Afalight (Shenzhen Afalight Co., Ltd.
+  / 深圳市埃尔法光电科技有限公司). The company has no API baseURL and no OpenAPI servers[]
+  host, so the host set is the registrable domain, www, and the English-language site.
+note: >-
+  Every named path returned 404 on every host. The negative-control path
+  (/.well-known/afalight-negative-control-7f3ab91c.json) also returned 404, so these hosts
+  are NOT path-echoing catch-alls and the 404s are real absences rather than a soft-404
+  pattern. No WellKnown, SecurityTxt, APICatalog or AgentCard pointer is emitted — this
+  artifact records an absence, not a presence.
+hit_count: 0
+path_echo_control: passed
+hosts:
+- host: https://www.afalight.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 0
+    note: >-
+      Three attempts all timed out at 25s against this flaky origin; every sibling
+      /.well-known/ path on the same host returned a clean 404, so this is recorded as
+      unresolved rather than as a hit.
+  - path: /.well-known/afalight-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control - a 404 here confirms the host does not echo arbitrary paths
+- host: https://afalight.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 0
+    note: repeated connection timeouts; unresolved
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 0
+    note: repeated connection timeouts; unresolved
+  - path: /apis.json
+    status: 0
+    note: repeated connection timeouts; unresolved
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/afalight-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control - a 404 here confirms the host does not echo arbitrary paths
+- host: http://en.afalight.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/afalight-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control - a 404 here confirms the host does not echo arbitrary paths
